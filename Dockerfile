@@ -1,19 +1,4 @@
-# Etapa 1: Construcción
-FROM node:18-alpine AS builder
-
-# Establecer el directorio de trabajo
-WORKDIR /app
-
-# Copiar package.json y package-lock.json (si existen)
-COPY package*.json ./
-
-# Instalar dependencias (si existen)
-RUN npm install --production
-
-# Copiar todos los archivos de la aplicación
-COPY . .
-
-# Etapa 2: Producción con Nginx
+# Usar directamente nginx como imagen base para aplicación estática
 FROM nginx:alpine
 
 # Instalar utilidades necesarias
@@ -22,7 +7,10 @@ RUN apk add --no-cache \
     && rm -rf /var/cache/apk/*
 
 # Copiar archivos de la aplicación al directorio de Nginx
-COPY --from=builder /app /usr/share/nginx/html
+COPY . /usr/share/nginx/html
+
+# Crear un enlace simbólico de Rebotlution.html a index.html para compatibilidad
+RUN ln -sf /usr/share/nginx/html/Rebotlution.html /usr/share/nginx/html/index.html
 
 # Copiar configuración personalizada de Nginx
 COPY nginx.conf /etc/nginx/nginx.conf
