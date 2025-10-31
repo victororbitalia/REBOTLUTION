@@ -1,0 +1,96 @@
+# Archivos y directorios comunes
+.git
+.gitignore
+README.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Directorios de dependencias (si existen)
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Directorios de construcción y despliegue
+dist
+build
+.cache
+.parcel-cache
+
+# Archivos de configuración de desarrollo
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos temporales y de sistema
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Archivos de log
+logs
+*.log
+
+# Archivos de editor de código
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Archivos de backup
+*.bak
+*.backup
+
+# Archivos de documentación
+docs
+*.md
+
+# Archivos de prueba y cobertura
+test
+tests
+coverage
+.nyc_output
+
+# Archivos de configuración de herramientas
+.eslintrc*
+.prettierrc*
+.stylelintrc*
+.jscsrc
+.jshintrc
+
+# Archivos de CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+.circleci
+
+# Archivos de Docker (ya se copian explícitamente)
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Archivos de sistema operativo
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Archivos de configuración de servidor
+nginx.conf
+apache.conf
+.htaccess
+
+# Archivos de base de datos
+*.sqlite
+*.db
+
+# Archivos de caché
+.cache
+.parcel-cache
+.tmp
+.temp
